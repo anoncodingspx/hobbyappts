@@ -5,7 +5,7 @@ interface props {
     hobby: Hobby;
     setHobbies: React.Dispatch<React.SetStateAction<Hobby[]>>;
 }
-const HobbyListItem:React.FC<props> = () => {
+const HobbyListItem:React.FC<props> = ({hobbies, hobby, setHobbies}) => {
     
   return (
     <div>{hobby.name}</div>
