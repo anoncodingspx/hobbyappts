@@ -7,8 +7,9 @@ interface props {
 }
 const HobbyListItem:React.FC<props> = ({hobbies, hobby, setHobbies}) => {
     
+  console.log(hobby.hobbyname)
   return (
-    <div>{hobby.name}</div>
+    <div>{hobby.hobbyname}</div>
   )
 }
 
