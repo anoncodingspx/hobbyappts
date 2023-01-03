@@ -15,7 +15,10 @@ const HobbyList: React.FC<props> = ({ hobbies, setHobbies }) => {
           key={singlehobby.id}
           setHobbies={setHobbies}
         />
-      ))}
+      ))
+      
+      
+      }
     </div>
   );
 };
