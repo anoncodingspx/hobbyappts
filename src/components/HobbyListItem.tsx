@@ -9,7 +9,7 @@ const HobbyListItem:React.FC<props> = ({hobbies, hobby, setHobbies}) => {
     
   console.log(hobby.hobbyname)
   return (
-    <div>{hobby.hobbyname}</div>
+    <div className="HobbyListItem">{hobby.hobbyname}</div>
   )
 }
 

@@ -7,7 +7,7 @@ interface props {
 }
 const HobbyList: React.FC<props> = ({ hobbies, setHobbies }) => {
   return (
-    <div className="hobbies">
+    <div className="HobbyList">
       {hobbies.map((singlehobby) => (
         <HobbyListItem
           hobbies={hobbies}

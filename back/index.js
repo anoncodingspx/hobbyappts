@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const port = 3000;
+const port = 3001;
 require("dotenv").config({ path: ".env" });
 // cors - allow connection from different domains and ports
 app.use(cors());
@@ -34,6 +34,40 @@ const Hobby = mongoose.model("Hobby", hobbySchema, "hobbies");
 app.get("/hobbies", async (request, response) => {
   const hobbies = await Hobby.find({});
   response.json(hobbies);
+});
+
+//POST hobby
+app.post("/hobbies", async (request, response) => {
+  const hobbyname = request.body.hobbyname;
+  const outside = request.body.outside;
+  const inside = request.body.inside;
+  const toolsneeded = request.body.toolsneeded;
+  const otherhumansneeded = request.body.otherhumansneeded;
+  const tags = request.body.tags;
+
+  if (hobbyname === ""){
+    throw Error;
+  }
+
+  try {
+    const hobby = new Hobby({
+      hobbyname: hobbyname,
+      // done: donelkm,
+      outside: outside,
+      inside: inside,
+      toolsneeded: toolsneeded,
+      otherhumansneeded: otherhumansneeded,
+      tags: tags,
+    });
+    const savedHobby = await hobby.save();
+    response.json(savedHobby);
+  } catch (error) {
+    response.status(400);
+
+    response.send({
+      error: "Your hobby didn't include enough required info to be added",
+    });
+  }
 });
 
 app.listen(port, () => {
