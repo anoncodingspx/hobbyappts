@@ -2,7 +2,13 @@
 
 Transforming a vanilla JS Fullstack project (vanilla JS, Node and MongoDB)
 
-into a Typescript project
+into a Typescript + React project
+
+## POST success (9.1.2023)
+
+Now the POST functionality is complete and the new hobby is added to the state, so no need for a refresh 
+
+after adding.
 
 ## POST success (5.1.2023)
 

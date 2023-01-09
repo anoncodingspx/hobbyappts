@@ -1,6 +1,12 @@
 import React, { MutableRefObject, useRef } from "react";
 import axios from "axios";
-const AddHobbyForm: React.FC = () => {
+import { Hobby } from "../models/models";
+
+interface props {
+  hobbies: Hobby[];
+  setHobbies: React.Dispatch<React.SetStateAction<Hobby[]>>;
+}
+const AddHobbyForm: React.FC<props> = ({hobbies, setHobbies}) => {
   //useRefs for the AddHobby component
   const hobbynameRef = useRef() as MutableRefObject<HTMLInputElement>;
   const outdoorsRef = useRef() as MutableRefObject<HTMLInputElement>;
@@ -27,8 +33,9 @@ const AddHobbyForm: React.FC = () => {
     } else {
       axios.post(`${url}/hobbies`, data).then((response) => {
         console.log(response.data);
-        // setHobbies(response.data);
-        // // setHobbies(mockdata)
+        let newHobby:Hobby = response.data;
+       setHobbies([...hobbies, newHobby]);
+       
       });
     }
 
