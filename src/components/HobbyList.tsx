@@ -9,16 +9,13 @@ const HobbyList: React.FC<props> = ({ hobbies, setHobbies }) => {
   return (
     <div className="HobbyList">
       {hobbies.map((singlehobby) => (
-        <HobbyListItem
-          hobbies={hobbies}
-          hobby={singlehobby}
-          key={singlehobby.id}
-          setHobbies={setHobbies}
-        />
-      ))
-      
-      
-      }
+          <HobbyListItem
+            hobbies={hobbies}
+            hobby={singlehobby}
+            setHobbies={setHobbies}
+            key={singlehobby.id}
+          />
+      ))}
     </div>
   );
 };
