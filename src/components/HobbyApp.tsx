@@ -10,7 +10,7 @@ const HobbyApp: React.FC = () => {
 
   useEffect(() => {
     axios.get(`${url}/hobbies`).then((response) => {
-      console.log(response.data);
+      console.log(response.data)
       setHobbies(response.data);
       // setHobbies(mockdata)
     });
@@ -19,7 +19,7 @@ const HobbyApp: React.FC = () => {
   return (
     <div className="HobbyApp">
       <ul className="nav">
-        <li>Navi</li>
+       
         
       </ul>
       <AddHobby hobbies={hobbies} setHobbies={setHobbies} />

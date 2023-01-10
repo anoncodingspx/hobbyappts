@@ -36,6 +36,16 @@ app.get("/hobbies", async (request, response) => {
   response.json(hobbies);
 });
 
+//DELETE one hobby
+app.delete("/hobbies/:id", async (request, response) => {
+  const deletedHobby = await Hobby.findByIdAndRemove(request.params.id);
+  if (deletedHobby) response.json(deletedHobby);
+  else response.status(404).end();
+});
+
+
+
+
 //POST hobby
 app.post("/hobbies", async (request, response) => {
   const hobbyname = request.body.hobbyname;

@@ -5,7 +5,7 @@ export interface Hobby {
     // id: number,
     // name: string,
     // isDone: boolean
-  id: Types.ObjectId | any;
+  _id: Types.ObjectId | any;
   hobbyname: string;
   inside: boolean;
   otherhumansneeded: boolean;

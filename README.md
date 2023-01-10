@@ -4,11 +4,25 @@ Transforming a vanilla JS Fullstack project (vanilla JS, Node and MongoDB)
 
 into a Typescript + React project
 
-## POST success (9.1.2023)
+## DELETE success (9.1.2023)
+
+There was an issue with the id key, I changed it to _id and now things work again.
+
+Delete functionality works now.
+
+![Delete](src/progresspics/3deletehobby.png)
+
+On the whole, the app looks like this now. Until I add the navigation buttons,
+
+the AddHobby component is visible.
+
+![whole app](src/progresspics/4wholenow.png)
+
+## POST success with State (9.1.2023)
 
 Now the POST functionality is complete and the new hobby is added to the state, so no need for a refresh 
 
-after adding.
+after adding. 
 
 ## POST success (5.1.2023)
 
